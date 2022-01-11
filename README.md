@@ -7,7 +7,8 @@ In this project we used the Wire Mock standalone JAR and Zoom API
   
   The 3 main concepts that were beneficial in speeding up testing were Stubbing, Request Matching and Response Templating.
   
-###Stubbing is the ability to return canned HTTP responses for requests matching criteria. This can be done in ways, we have explored using C# and JSON API.
+### Stubbing 
+- to return canned HTTP responses for requests matching criteria. This can be done in ways, we have explored using C# and JSON API.
 
 1) C# POST to create mapping:
 
@@ -49,12 +50,14 @@ In this project we used the Wire Mock standalone JAR and Zoom API
     
 In “response” the “bodyFileName” is located under “__files” directory of where Wire Mock is running. Body contents can be input directly instead like “ “body” : “Hey” too.
 
-###Request Matching is abaility to match requests to stubs and verification queries using URL, Headers, Request Body Contents and more. We explored match via Query Parameters.
+### Request Matching
+- to match requests to stubs and verification queries using URL, Headers, Request Body Contents and more. We explored match via Query Parameters.
 
 Endpoint = v2/archive_files - query parameters after “?” should be matched (see code snippet 2) line 34.
 Code snipped 2) is mapping for Archive Files requests --> https://api.zoom.us/v2/archive_files?from=2021-08-25T09:05:15Z&to=2021-09-01T09:05:15Z&page_size=15&query_date_type=archive_complete_time
 
-###Response Templating is the ability to configure response headers and bodies, as well as proxy URLs, that can optionally be rendered using Handlebars templates. This enables attributes of the request to be used in generating the response. We explored this in dynamically setting start_time in our response body as it is queried.
+### Response Templating 
+- to configure response headers and bodies, as well as proxy URLs, that can optionally be rendered using Handlebars templates. This enables attributes of the request to be used in generating the response. We explored this in dynamically setting start_time in our response body as it is queried.
 
 Alter start_time/end_time/duration in a response mapping for each request. 
 Example -
